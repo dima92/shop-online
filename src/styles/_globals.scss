@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  font-weight: 400;
+  line-height: 1.28;
+  color: $white;
+  background-color: $dark;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}

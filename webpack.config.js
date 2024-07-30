@@ -1,14 +1,18 @@
-const fs = require('fs');
-const path = require('path');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+import HTMLWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const optimization = () => {
   const config = {
@@ -121,7 +125,7 @@ const plugins = () => {
   return base;
 };
 
-module.exports = {
+export default {
   mode: 'development',
   target: ['web', 'es6'],
   entry: {
